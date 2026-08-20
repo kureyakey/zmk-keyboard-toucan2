@@ -1,4 +1,13 @@
 {
+  "sensors": [
+    {
+      "ref": "left_encoder",
+      "name": "encoder_left",
+      "identifier": "encoder_left",
+      "compatible": "alps,ec11",
+      "enabled": true
+    }
+  ],
   "layouts": {
     "Default Layout": {
       "layout": [
@@ -38,6 +47,7 @@
         { "x": 11.0, "y": 2.12 },
         { "x": 12.0, "y": 2.37 },
         { "x": 13.0, "y": 2.37 },
+        { "x": 6.0, "y": 2.24 },
         { "x": 3.5, "y": 3.12 },
         { "x": 4.5, "y": 3.12, "r": 12.0, "rx": 4.5, "ry": 4.12 },
         { "x": 5.48, "y": 3.28, "r": 24.0, "rx": 5.48, "ry": 4.33 },
