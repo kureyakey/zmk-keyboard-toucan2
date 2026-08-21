@@ -49,15 +49,13 @@
     clock-frequency = <I2C_BITRATE_FAST>;
     zephyr,concat-buf-size = <32>;
 
-    pointing_device: pointing_device@56 {
+    tps43_trackpad: trackpad@74 {
+        compatible = "azoteq,tps43";
+        reg = <0x74>;
         status = "okay";
-        compatible = "azoteq,iqs7211e";
-        reg = <0x56>;
 
-        irq-gpios = <&gpio1 14 GPIO_PULL_UP>;
-        power-gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H1)>;
-        init-symbol = "mini_trackpad_iqs7211e_init";
-        init-length = <217>;
+        rst-gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
+        rdy-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
 
         enable-power-management;
         // idle-sleep; // provides maximal power savings but when ZMK is idle (i.e. you haven't used keyboard in 30secs) the touchpad will not work.  not recommended.
@@ -84,6 +82,6 @@
     };
 };
 
-&pointing_split {
-    device = <&pointing_device>;
+&trackpad_split {
+    device = <&tps43_trackpad>;
 };
