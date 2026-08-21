@@ -25,8 +25,5 @@ manifest:
       revision: v0.3
     - name: zmk-driver-iqs7211e
       remote: sekigon-gonnoc
-    - name: zmk-input-zoom
-      remote: beekeeb
-      revision: main
   self:
     path: config
