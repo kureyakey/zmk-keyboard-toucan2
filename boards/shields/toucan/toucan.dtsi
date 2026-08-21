@@ -5,7 +5,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 
-#define TOUCAN_WIN_MODE
+//#define TOUCAN_WIN_MODE
 
 / {
     chosen {
@@ -19,12 +19,12 @@
         diode-direction = "col2row";
         wakeup-source;
 
-    row-gpios
-    = <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-    , <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-    , <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-    , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-    ;
+        row-gpios
+            = <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
     };
 
     default_layout: default_layout {
@@ -79,7 +79,6 @@
             ;
     };
 
-
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;
@@ -92,7 +91,6 @@
         >;
     };
 
-        
     left_encoder: encoder_left {
         compatible = "alps,ec11";
         a-gpios = <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -100,9 +98,7 @@
         steps = <24>;
         status = "okay";
     };
-};
 
-/ {
     input_processors {
         zip_zoom_mapper: zip_zoom_mapper {
             compatible = "zmk,input-processor-zoom";
@@ -117,12 +113,11 @@
             track-remainders;
         };
 
-        is_touching_processor:is_touching_processor {
+        is_touching_processor: is_touching_processor {
             compatible = "zmk,input-processor-behaviors";
             #input-processor-cells = <0>;
-
-            codes = <INPUT_BTN_TOUCH>;      // watch for the 'touch' pseudo button
-            bindings  = <&mo 4>;            // Activate Layer 4 while held &mo 4
+            codes = <INPUT_BTN_TOUCH>;
+            bindings = <&mo 4>;
         };
 
         swipe_button_mapper: swipe_button_mapper {
@@ -136,7 +131,6 @@
 #endif
         };
     };
-
 
     split_inputs {
         #address-cells = <1>;
