@@ -27,13 +27,14 @@
 
 / {
     trackpad_listener {
+        compatible = "zmk,input-listener";
         status = "okay";
         device = <&trackpad>;
         input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
 
         scroller {
             layers = <1 2>;
-            input-processors = <
+            input-processors = 
                 &zip_xy_to_scroll_mapper
                 &zip_scroll_scaler 1 20
                 &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
