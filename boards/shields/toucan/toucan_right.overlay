@@ -1,4 +1,8 @@
 #include "toucan.dtsi"
+#include <dt-bindings/zmk/input_transform.h>
+#include <dt-bindings/input/input-event-codes.h>
+#include <input/processors.dtsi>
+
 
 &default_transform {
     col-offset = <6>;
