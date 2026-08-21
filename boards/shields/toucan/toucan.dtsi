@@ -142,13 +142,13 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        pointing_split: pointing_split@0 {
+        trackpad_split: trackpad_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
         };
     };
 
-    pointing_listener: pointing_listener {
+    trackpad_listener: trackpad_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&trackpad_split>;
