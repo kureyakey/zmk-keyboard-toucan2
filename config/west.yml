@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/geeksville
     - name: beekeeb
       url-base: https://github.com/beekeeb
+    - name: kureyakey
+      url-base: https://github.com/kureyakey
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
   projects:
@@ -15,6 +17,9 @@ manifest:
       remote: zmkfirmware
       import: app/west.yml
       revision: v0.3
+    - name: zmk-feature-non-lipo-battery-management
+      remote: kureyakey
+      revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
