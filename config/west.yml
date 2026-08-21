@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/geeksville
     - name: beekeeb
       url-base: https://github.com/beekeeb
+    - name: sekigon-gonnoc
+      url-base: https://github.com/sekigon-gonnoc
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -16,9 +18,8 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
-    - name: zmk_driver_azoteq
-      remote: beekeeb
-      revision: main
+    - name: zmk-driver-iqs7211e
+      remote: sekigon-gonnoc
     - name: zmk-input-zoom
       remote: beekeeb
       revision: main
