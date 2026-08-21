@@ -43,10 +43,10 @@ nice_view_spi: &spi0 {
     ;
 };
 
-&trackpad_listener {
-    status = "okay";
+&non_lipo_battery {
+    io-channels = <&adc 2>;
 };
 
-&zip_zoom_mapper {
+&left_encoder {
     status = "okay";
 };
