@@ -1,8 +1,4 @@
 #include "toucan.dtsi"
-#include <dt-bindings/zmk/input_transform.h>
-#include <dt-bindings/input/input-event-codes.h>
-#include <input/processors.dtsi>
-
 
 &default_transform {
     col-offset = <6>;
@@ -27,7 +23,7 @@
 };
 
 &pinctrl {
-    i2c0_default: i2c0_default {
+    i2c0_azoteq_default: i2c0_azoteq_default {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 1, 13)>,
                     <NRF_PSEL(TWIM_SCL, 1, 15)>;
@@ -35,7 +31,7 @@
         };
     };
 
-    i2c0_sleep: i2c0_sleep {
+    i2c0_azoteq_sleep: i2c0_azoteq_sleep {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 1, 13)>,
                     <NRF_PSEL(TWIM_SCL, 1, 15)>;
@@ -45,21 +41,45 @@
 };
 
 &i2c0 {
-    status = "okay";
-    compatible = "nordic,nrf-twim";
-    pinctrl-0 = <&i2c0_default>;
-    pinctrl-1 = <&i2c0_sleep>;
-    pinctrl-names = "default", "sleep";
+   status = "okay";
     clock-frequency = <I2C_BITRATE_FAST>;
-    zephyr,concat-buf-size = <32>;
+    pinctrl-0 = <&i2c0_azoteq_default>;
+    pinctrl-1 = <&i2c0_azoteq_sleep>;
+    pinctrl-names = "default", "sleep";
 
-    trackpad: trackpad@56 {
+    tps43_trackpad: trackpad@74 {
+        compatible = "azoteq,tps43";
+        reg = <0x74>;
         status = "okay";
-        compatible = "azoteq,iqs7211e";
-        reg = <0x56>;
-        irq-gpios = <&gpio0 14 GPIO_PULL_UP>;
-        power-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
-        scroller-mode;
-        // v-invert;
+
+        rst-gpios = <&gpio1 14 GPIO_ACTIVE_HIGH>;
+        rdy-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+
+        enable-power-management;
+        // idle-sleep; // provides maximal power savings but when ZMK is idle (i.e. you haven't used keyboard in 30secs) the touchpad will not work.  not recommended.
+        // timeout-lp1 = <3>; // 60s timeout before entering lp2 state (20 secs per unit) (default was 20s)
+        report-rate-lp2 = <640>; // 640ms report rate in LP2 state means 55uA draw rather than default 160ms 174uA draw
+        scroll-angle = <30>; // The default angle (about 47 deg) is too big on toucan2 I think
+        sensitivity = <100>;
+        scroll-sensitivity = <100>;
+
+        filter-settings=<0x0B>;
+        hold-time = <500>;
+
+        zoom;
+        scroll;
+        two-finger-tap;
+        single-tap;
+        press-and-hold;
+        //swipes;
+        three-finger-swipe;
+        three-finger-swipe-throttle-ms = <1200>;
+        switch-xy;
+        invert-scroll-y;
+
     };
+};
+
+&trackpad_split {
+    device = <&tps43_trackpad>;
 };
