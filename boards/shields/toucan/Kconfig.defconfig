@@ -37,4 +37,5 @@ config RGBLED_WIDGET_BATTERY_LEVEL_HIGH
 
 endif
 
+endif
 
