@@ -104,7 +104,6 @@
         sensors = <&left_encoder>;
         triggers-per-rotation = <10>;
     };
-};
 
     input_processors {
         zip_zoom_mapper: zip_zoom_mapper {
