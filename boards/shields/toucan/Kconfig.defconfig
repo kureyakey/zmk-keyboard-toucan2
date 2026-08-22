@@ -24,8 +24,6 @@ config SPI
 config ZMK_SPLIT
     default y
 
-if ZMK_KEYBOARD_YOUR_KEYBOARD
-
 config ZMK_POINTING
     default y
 
