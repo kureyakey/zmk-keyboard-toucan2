@@ -99,6 +99,13 @@
         status = "okay";
     };
 
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+        triggers-per-rotation = <10>;
+    };
+};
+
     input_processors {
         zip_zoom_mapper: zip_zoom_mapper {
             compatible = "zmk,input-processor-zoom";
