@@ -1,5 +1,6 @@
 #include "toucan.dtsi"
-
+#include <dt-bindings/zmk/input_transform.h>
+#include <input/processors.dtsi>
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -9,7 +10,6 @@
                 <NRF_PSEL(SPIM_MISO, 1, 14)>;
         };
     };
-
      spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 1, 13)>,
@@ -18,7 +18,6 @@
             low-power-enable;
         };
     };
-
 };
 
 nice_view_spi: &spi0 {
@@ -50,4 +49,32 @@ nice_view_spi: &spi0 {
 
 &left_encoder {
     status = "okay";
+};
+
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackpad_split: trackpad_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    trackpad_listener: trackpad_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackpad_split>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+
+        scroller {
+            layers = <1 2>;
+            input-processors = 
+                &zip_xy_to_scroll_mapper
+                &zip_scroll_scaler 1 20
+                &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+            >;
+        };
+    };
 };
