@@ -32,8 +32,6 @@ config ZMK_POINTING
 config IQS7211E
     default y
 
-endif
-
 config RGBLED_WIDGET_BATTERY_LEVEL_HIGH
     default 40
 
