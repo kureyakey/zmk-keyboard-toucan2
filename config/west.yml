@@ -25,7 +25,7 @@ manifest:
       revision: main
     - name: zmk_driver_azoteq
       remote: kureyakey
-      revision: main
+      revision: master
     - name: zmk-input-zoom
       remote: beekeeb
       revision: main
