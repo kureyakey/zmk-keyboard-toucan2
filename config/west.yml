@@ -25,7 +25,7 @@ manifest:
       revision: main
     - name: zmk_driver_azoteq
       remote: beekeeb
-      revision: fix-3-finger
+      revision: fix-3-fingers
     - name: zmk-input-zoom
       remote: beekeeb
       revision: main
