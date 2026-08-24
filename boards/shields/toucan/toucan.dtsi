@@ -93,13 +93,13 @@
 
 
    // non_lipo_battery: non_lipo_battery {
-        compatible = "zmk,non-lipo-battery";
-        io-channels = <&adc 0>;
-    };
+   //     compatible = "zmk,non-lipo-battery";
+   //     io-channels = <&adc 0>;
+   // };
 
     //vbatt {
-        status = "disabled";
-    };
+    //    status = "disabled";
+    //};
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
@@ -175,6 +175,6 @@
 
 };
 
-     &adc {
-    status = "okay";
-};
+//     &adc {
+//    status = "okay";
+//};
