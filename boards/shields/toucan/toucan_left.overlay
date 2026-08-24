@@ -44,7 +44,7 @@ nice_view_spi: &spi0 {
 };
 
 &non_lipo_battery {
-    io-channels = <&adc 2>;
+    io-channels = <&adc 0>;
 };
 
 &trackpad_listener {
