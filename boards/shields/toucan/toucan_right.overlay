@@ -80,6 +80,10 @@
     };
 };
 
+&non_lipo_battery {
+    io-channels = <&adc 0>;
+};
+
 &trackpad_split {
     device = <&tps43_trackpad>;
 };
