@@ -77,6 +77,20 @@
         switch-xy;
         invert-scroll-y;
 
+        // ↓ここから今回追加した検証用プロパティ
+        zoom-sensitivity = <100>;
+        // invert-x;
+        // invert-y;
+        tap-time = <200>;
+        tap-distance = <10>;
+        swipe-initial-distance = <30>;
+        swipe-initial-time = <200>;
+        swipe-angle = <30>;
+        scroll-initial-distance = <10>;
+        zoom-initial-distance = <30>;
+        zoom-consecutive-distance = <20>;
+        report-rate-active = <20>;
+        timeout-active = <3>;
     };
 };
 
