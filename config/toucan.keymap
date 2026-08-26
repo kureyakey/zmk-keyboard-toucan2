@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define Zonkey  0
+#define CHIBI  0
 #define NAV     1
 #define SYM     2
 #define ADJ     3
@@ -23,7 +23,7 @@
         compatible = "zmk,keymap";
 
         base {
-            display-name = "Zonkey";
+            display-name = "CHIBI";
             bindings = <
 &kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp BSPC  &kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp SQT  &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC  &kp LG(NUMBER_4)  &kp LGUI  &mo 1  &kp SPACE  &kp RET  &mo 2  &kp RALT
             >;
