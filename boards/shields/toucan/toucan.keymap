@@ -11,6 +11,7 @@
 #define SYM     2
 #define ADJ     3
 #define ENC_VOL 4
+
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -19,6 +20,26 @@
             then-layer = <3>;
         };
     };
+
+behaviors {
+    rsr_vol: rsr_vol {
+        compatible = "zmk,behavior-runtime-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        tap-ms = <20>;
+        cw-binding = <&kp C_VOL_DN>;
+        ccw-binding = <&kp C_VOL_UP>;
+    };
+
+    rsr_pg: rsr_pg {
+        compatible = "zmk,behavior-runtime-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        tap-ms = <20>;
+        cw-binding = <&kp PG_UP>;
+        ccw-binding = <&kp PAGE_DOWN>;
+    };
+};
+
+
     keymap {
         compatible = "zmk,keymap";
         base {
