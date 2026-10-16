@@ -10,35 +10,37 @@ manifest:
       url-base: https://github.com/beekeeb
     - name: cormoran
       url-base: https://github.com/cormoran
+    - name: kureyakey
+      url-base: https://github.com/kureyakey
     - name: badjeff
       url-base: https://github.com/badjeff
       
   projects:
     - name: zmk
-      remote: cormoran
+      remote: cormoran          
       revision: v0.3-branch+dya
       import: app/west.yml
-
+      
     - name: zmk-module-ble-management
       remote: cormoran
-      revision: v0.3
-
+      revision: zmk-v0.3.0.0
+      
     - name: zmk-module-battery-history
       remote: cormoran
-      revision: v0.3
-
+      revision: main
+      
     - name: zmk-module-settings-rpc
       remote: cormoran
-      revision: v0.3
-
+      revision: main
+      
     - name: zmk-module-runtime-input-processor
       remote: cormoran
-      revision: v0.3
-
+      revision: zmk-v0.3.0.0
+      
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
-      revision: v0.3
-
+      revision: main
+      
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
