@@ -8,19 +8,48 @@ manifest:
       url-base: https://github.com/geeksville
     - name: beekeeb
       url-base: https://github.com/beekeeb
+    - name: cormoran
+      url-base: https://github.com/cormoran
+    - name: badjeff
+      url-base: https://github.com/badjeff
+      
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: cormoran
+      revision: v0.3-branch+dya
       import: app/west.yml
-      revision: v0.3
+
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
+
+    - name: zmk-behavior-runtime-sensor-rotate
+      remote: cormoran
+      revision: main
+
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
+      
     - name: zmk_driver_azoteq
       remote: beekeeb
       revision: main
+      
     - name: zmk-input-zoom
       remote: beekeeb
       revision: main
+      
   self:
     path: config
