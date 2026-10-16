@@ -21,23 +21,23 @@ manifest:
 
     - name: zmk-module-ble-management
       remote: cormoran
-      revision: main
+      revision: v0.3
 
     - name: zmk-module-battery-history
       remote: cormoran
-      revision: main
+      revision: v0.3
 
     - name: zmk-module-settings-rpc
       remote: cormoran
-      revision: main
+      revision: v0.3
 
     - name: zmk-module-runtime-input-processor
       remote: cormoran
-      revision: main
+      revision: v0.3
 
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
-      revision: main
+      revision: v0.3
 
     - name: zmk-rgbled-widget
       remote: caksoylar
