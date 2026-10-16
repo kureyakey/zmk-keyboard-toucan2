@@ -63,7 +63,7 @@
                 &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-                       &trans &trans &trans &trans   &trans &trans &trans
+                       &trans &trans &trans &studio_unlock   &trans &trans &trans
             >;
         sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
