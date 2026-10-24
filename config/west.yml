@@ -39,7 +39,7 @@ manifest:
       
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
-      revision: main
+      revision: zmk-v0.3.0.0
       
     - name: zmk-rgbled-widget
       remote: caksoylar
