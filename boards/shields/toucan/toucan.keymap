@@ -10,7 +10,6 @@
 #define NAV     1
 #define SYM     2
 #define ADJ     3
-#define ENC_VOL 4
 
 / {
     conditional_layers {
@@ -81,16 +80,7 @@ behaviors {
             >;
             sensor-bindings = <&rsr_pg>;
         };
-        enc_vol {
-            display-name = "ENC_VOL";
-            bindings = < 
-                &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans &trans
-                       &trans &trans &trans &studio_unlock   &trans &trans &trans
-            >;
-        sensor-bindings = <&rsr_vol>;
-        };
+        
         extra_2 {
                 status = "reserved";
         };
